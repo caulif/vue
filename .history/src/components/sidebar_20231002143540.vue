@@ -11,7 +11,7 @@
             router
         >
             <template v-for="item in items">
-                <el-menu-item :index="item.index"  v-permiss="item.permiss">
+                <el-menu-item :index="item.index" :key="item.index" v-permiss="item.permiss">
                     <el-icon>
                         <component :is="item.icon"></component>
                     </el-icon>
@@ -30,25 +30,25 @@ import { useRoute } from 'vue-router';
 const items = [
     {
         icon: 'Odometer',
-        index: '/UserInfoPage',
+        index: '/dashboard',
         title: '用户信息',
         permiss: '1',
     },
     {
         icon: 'Calendar',
-        index: '/PublicKeyGenerationPage', // 修改为对应的路由路径
+        index: '/table', // 修改为对应的路由路径
         title: '公钥生成', // 修改为对应的侧边栏项名称
         permiss: '2',
     },
     {
         icon: 'PieChart',
-        index: '/DigitalSignaturePage', // 修改为对应的路由路径
+        index: '/charts', // 修改为对应的路由路径
         title: '数字签名', // 修改为对应的侧边栏项名称
         permiss: '11',
     },
     {
         icon: 'Edit',
-        index: '/SignatureVerificationPage', // 修改为对应的路由路径
+        index: '/form', // 修改为对应的路由路径
         title: '签名认证', // 修改为对应的侧边栏项名称
         permiss: '5',
     },

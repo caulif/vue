@@ -42,13 +42,13 @@ const items = [
     },
     {
         icon: 'PieChart',
-        index: '/DigitalSignaturePage', // 修改为对应的路由路径
+        index: '/SignatureVerificationPage', // 修改为对应的路由路径
         title: '数字签名', // 修改为对应的侧边栏项名称
         permiss: '11',
     },
     {
         icon: 'Edit',
-        index: '/SignatureVerificationPage', // 修改为对应的路由路径
+        index: '/form', // 修改为对应的路由路径
         title: '签名认证', // 修改为对应的侧边栏项名称
         permiss: '5',
     },

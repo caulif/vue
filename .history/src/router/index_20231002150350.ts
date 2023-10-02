@@ -28,25 +28,25 @@ const routes: RouteRecordRaw[] = [
                     title: '公钥生成',
                     permiss: '2',
                 },
-                component: () => import(/* webpackChunkName: "PublicKeyGenerationPage" */ '../views/PublicKeyGenerationPage.vue'),
-            },
-            {
-                path: '/DigitalSignaturePage',
-                name: 'DigitalSignaturePage',
-                meta: {
-                    title: '数字签名',
-                    permiss: '11',
-                },
-                component: () => import(/* webpackChunkName: "DigitalSignaturePage" */ '../views/DigitalSignaturePage.vue'),
+                component: () => import(/* webpackChunkName: "table" */ '../views/PublicKeyGenerationPage.vue'),
             },
             {
                 path: '/SignatureVerificationPage',
                 name: 'SignatureVerificationPage',
                 meta: {
+                    title: '数字签名',
+                    permiss: '11',
+                },
+                component: () => import(/* webpackChunkName: "charts" */ '../views/SignatureVerificationPage.vue'),
+            },
+            {
+                path: '/form',
+                name: 'baseform',
+                meta: {
                     title: '签名认证',
                     permiss: '5',
                 },
-                component: () => import(/* webpackChunkName: "SignatureVerificationPage" */ '../views/SignatureVerificationPage.vue'),
+                component: () => import(/* webpackChunkName: "form" */ '../views/form.vue'),
             },
         ],
     },
