@@ -14,7 +14,7 @@
 		  </div>
 		</div>
 	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	  <router-link to="/generate" class="generate-button">生成/重新生成</router-link>
 	</div>
   </template>
   

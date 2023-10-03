@@ -48,15 +48,6 @@ const routes: RouteRecordRaw[] = [
                 },
                 component: () => import(/* webpackChunkName: "SignatureVerificationPage" */ '../views/SignatureVerificationPage.vue'),
             },
-            {
-                path: '/genkey',
-                name: 'genkey',
-                meta: {
-                    title: '生成公钥界面',
-                    permiss: '5',
-                },
-                component: () => import(/* webpackChunkName: "SignatureVerificationPage" */ '../views/genkey.vue'),
-            },
         ],
     },
     // ...

@@ -14,23 +14,9 @@
 		  </div>
 		</div>
 	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	  <button @click="generateKeys" class="generate-button">生成/重新生成</button>
 	</div>
   </template>
-  
-  <script>
-  export default {
-	data() {
-	  return {
-		publicKeys: [
-		  { name: '公钥1', key: '123', generated: true },
-		  { name: '公钥2', key: '', generated: false },
-		  { name: '公钥3', key: '', generated: false },
-		],
-	  };
-	},
-  };
-  </script>
   
   <style scoped>
   /* 样式可以根据你的需求进行自定义 */
@@ -83,7 +69,6 @@
 	background-color: #0056b3;
   }
   </style>
-  
   
   
   

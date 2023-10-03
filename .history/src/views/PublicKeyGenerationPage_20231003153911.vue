@@ -2,11 +2,7 @@
 	<div class="public-key-container">
 	  <h1>公钥显示页面</h1>
 	  <div class="public-key-list">
-		<div
-		  class="public-key-item"
-		  v-for="(publicKey, index) in publicKeys"
-		  :key="index"
-		>
+		<div class="public-key-item" v-for="(publicKey, index) in publicKeys" :key="index">
 		  <div class="public-key-name">{{ publicKey.name }}</div>
 		  <div class="public-key-status">
 			<span v-if="publicKey.generated" class="generated-key">{{ publicKey.key }}</span>
@@ -14,7 +10,7 @@
 		  </div>
 		</div>
 	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	  <button @click="generateKeys" class="generate-button">生成/重新生成</button>
 	</div>
   </template>
   
@@ -23,11 +19,18 @@
 	data() {
 	  return {
 		publicKeys: [
-		  { name: '公钥1', key: '123', generated: true },
-		  { name: '公钥2', key: '', generated: false },
+		  { name: '人脸公钥', key: '123', generated: True },
+		  { name: '声纹公钥', key: '', generated: false },
 		  { name: '公钥3', key: '', generated: false },
 		],
 	  };
+	},
+	methods: {
+	  generateKeys() {
+		// 发送HTTP请求到后端以生成公钥，然后更新this.publicKeys数组
+		// 你需要在这里实现与后端的通信逻辑
+		// 示例代码：axios.post('/generate_keys').then(response => { ... })
+	  },
 	},
   };
   </script>
@@ -48,7 +51,7 @@
   .public-key-item {
 	display: flex;
 	justify-content: space-between;
-	width: 300px;
+	width: 500px;
 	margin: 10px 0;
 	padding: 10px;
 	background-color: #f0f0f0;
@@ -83,7 +86,6 @@
 	background-color: #0056b3;
   }
   </style>
-  
   
   
   

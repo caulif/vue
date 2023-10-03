@@ -14,7 +14,7 @@
 		  </div>
 		</div>
 	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	  <button @click="generateKeys" class="generate-button">生成/重新生成</button>
 	</div>
   </template>
   
@@ -23,11 +23,18 @@
 	data() {
 	  return {
 		publicKeys: [
-		  { name: '公钥1', key: '123', generated: true },
+		  { name: '公钥1', key: '', generated: false },
 		  { name: '公钥2', key: '', generated: false },
 		  { name: '公钥3', key: '', generated: false },
 		],
 	  };
+	},
+	methods: {
+	  generateKeys() {
+		// 发送HTTP请求到后端以生成公钥，然后更新this.publicKeys数组
+		// 你需要在这里实现与后端的通信逻辑
+		// 示例代码：axios.post('/generate_keys').then(response => { ... })
+	  },
 	},
   };
   </script>
@@ -83,7 +90,6 @@
 	background-color: #0056b3;
   }
   </style>
-  
   
   
   

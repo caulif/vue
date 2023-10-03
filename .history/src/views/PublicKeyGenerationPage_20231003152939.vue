@@ -1,91 +1,16 @@
+<!-- PublicKeyDisplay.vue -->
 <template>
-	<div class="public-key-container">
-	  <h1>公钥显示页面</h1>
-	  <div class="public-key-list">
-		<div
-		  class="public-key-item"
-		  v-for="(publicKey, index) in publicKeys"
-		  :key="index"
-		>
-		  <div class="public-key-name">{{ publicKey.name }}</div>
-		  <div class="public-key-status">
-			<span v-if="publicKey.generated" class="generated-key">{{ publicKey.key }}</span>
-			<span v-else class="not-generated-key">未生成</span>
-		  </div>
-		</div>
-	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	<div>
+	  <div>{{ publicKeyName }}</div>
+	  <div>{{ publicKeyStatus }}</div>
 	</div>
   </template>
   
   <script>
   export default {
-	data() {
-	  return {
-		publicKeys: [
-		  { name: '公钥1', key: '123', generated: true },
-		  { name: '公钥2', key: '', generated: false },
-		  { name: '公钥3', key: '', generated: false },
-		],
-	  };
-	},
-  };
+	props: ['publicKeyName', 'publicKeyStatus']
+  }
   </script>
-  
-  <style scoped>
-  /* 样式可以根据你的需求进行自定义 */
-  .public-key-container {
-	text-align: center;
-	margin: 20px;
-  }
-  
-  .public-key-list {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-  }
-  
-  .public-key-item {
-	display: flex;
-	justify-content: space-between;
-	width: 300px;
-	margin: 10px 0;
-	padding: 10px;
-	background-color: #f0f0f0;
-	border-radius: 5px;
-	border: 1px solid #ccc; /* 添加边框 */
-  }
-  
-  .public-key-name {
-	font-weight: bold;
-  }
-  
-  .generated-key {
-	color: green;
-  }
-  
-  .not-generated-key {
-	color: red;
-  }
-  
-  .generate-button {
-	margin-top: 20px;
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
-  }
-  
-  .generate-button:hover {
-	background-color: #0056b3;
-  }
-  </style>
-  
-  
-  
   
 
 

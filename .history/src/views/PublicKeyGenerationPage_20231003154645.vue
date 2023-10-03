@@ -14,7 +14,7 @@
 		  </div>
 		</div>
 	  </div>
-	  <router-link to="/genkey" class="generate-button">生成/重新生成</router-link>
+	  <router-link to="/generate" class="generate-button">生成/重新生成</router-link>
 	</div>
   </template>
   
@@ -23,7 +23,7 @@
 	data() {
 	  return {
 		publicKeys: [
-		  { name: '公钥1', key: '123', generated: true },
+		  { name: '公钥1', key: '', generated: false },
 		  { name: '公钥2', key: '', generated: false },
 		  { name: '公钥3', key: '', generated: false },
 		],

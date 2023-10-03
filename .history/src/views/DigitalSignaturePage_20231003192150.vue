@@ -1,17 +1,16 @@
 <template>
 	<div class="digital-signature-container">
-	  <h2>签名验证</h2>
+	  <h1>数字签名展示页面</h1>
+  
 	  <!-- 上部分：输入明文框 -->
 	  <div class="section" id="input-section">
-		<h2 class="section-title">输入待验证内容</h2>
-		<hr> <!-- 分割线 -->
-		<textarea v-model="plaintext" placeholder="输入待验证内容"></textarea>
+		<h2 class="section-title">输入待签名内容</h2>
+		<textarea v-model="plaintext" placeholder="输入待签名内容"></textarea>
 	  </div>
   
 	  <!-- 中部分：选项按钮 -->
 	  <div class="section" id="options-section">
 		<h2 class="section-title">选择签名模式</h2>
-		<hr> <!-- 分割线 -->
 		<div class="option-row">
 		  <label>模态：</label>
 		  <button @click="selectModality('single')">单模态</button>
@@ -33,8 +32,7 @@
   
 	  <!-- 下部分：文件提交按钮 -->
 	  <div class="section" id="file-upload-section">
-		<h2 class="section-title">选择公钥</h2>
-		<hr> 
+		<h2 class="section-title">上传生物特征信息</h2>
 		<div class="file-upload-row" v-for="(fileInput, index) in fileInputs" :key="index">
 		  <label>{{ fileInput.label }}：</label>
 		  <input type="file" @change="handleFileUpload(index)" />
@@ -110,7 +108,7 @@ export default {
       // 检查是否有上传文件
       const hasUploadedFiles = this.fileInputs.some((input) => input.result !== '');
       if (!hasUploadedFiles) {
-        window.alert("没有上传文件，验证失败");
+        window.alert("没有上传文件，签名失败");
         return;
       }
 
@@ -143,37 +141,25 @@ export default {
   <style scoped>
   /* Add your custom styles here */
   .digital-signature-container {
-  text-align: center;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* 设置容器高度为视口高度，实现垂直居中 */
-}
-
-.section {
-  border: 3px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 20px;
-  width: 100%; /* 控制容器的宽度 */
-  max-width: 600px; /* 设置最大宽度，可以根据需要调整 */
-}
-hr {
-  margin: 10px 0; /* 设置分割线的上下间距 */
-  border: none;
-  border-top: 1px solid #ccc;
-}
-
-textarea {
-  width: 80%;
-  height: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  resize: none;
-}
+	text-align: center;
+	margin: 20px;
+  }
+  
+  .section {
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 20px;
+  }
+  
+  textarea {
+	width: 60%;
+	height: 80px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	resize: none;
+  }
   
   .option-row {
 	margin-bottom: 10px;

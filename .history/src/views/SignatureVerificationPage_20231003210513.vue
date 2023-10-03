@@ -110,7 +110,7 @@ export default {
       // 检查是否有上传文件
       const hasUploadedFiles = this.fileInputs.some((input) => input.result !== '');
       if (!hasUploadedFiles) {
-        window.alert("没有上传文件，验证失败");
+        window.alert("没有上传文件，签名失败");
         return;
       }
 
